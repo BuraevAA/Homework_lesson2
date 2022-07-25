@@ -1,9 +1,18 @@
 ﻿Console.Clear();
-Console.WriteLine("Введите три числа от 0 до 9: ");
-int a = Convert.ToInt32(Console.ReadLine());
-int b = Convert.ToInt32(Console.ReadLine());
-int c = Convert.ToInt32(Console.ReadLine());
-int[] array = { a, b, c };
-Console.WriteLine($"{array[0]}{array[1]}{array[2]}");
-Console.WriteLine($"{array[1]}");
-
+void FillData(int[] Data)
+{
+    int Lenght = Data.Length;
+    int i = 0;
+    Console.WriteLine("Введите элемент трехзначного числа от 0 до 9");
+    while (i < Lenght)
+        {
+            Data[i] = Convert.ToInt32(Console.ReadLine());
+            i++;
+        }
+        for (i = 0; i < Lenght; i++)
+        Console.Write(Data[i]);
+}
+int[] Data  = new int[3];
+FillData(Data);
+Console.WriteLine("");
+Console.WriteLine("Второй элемент трехзначного числа :" +Data[1]);
